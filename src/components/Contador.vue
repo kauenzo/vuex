@@ -1,11 +1,14 @@
 <template>
   <div id="app">
 <!--    <p> {{ idade }}</p>-->
-    <h2> Contador </h2>
+<!--    <h2> Contador </h2>
     <p> {{ count }}</p>
     <button @click="adicionar">+</button>
     <button @click="zerar">0</button>
-    <button @click="diminuir">-</button>
+    <button @click="diminuir">-</button>-->
+    <h2>Contador</h2>
+    <p> {{todosDone}}</p>
+    <p> Quantidade: {{ todosDoneCount }}</p>
   </div>
 </template>
 
@@ -14,20 +17,20 @@ import { mapState } from 'vuex';
 
 export default {
   name: "Contador",
-  data() {
+  /*data() {
     return {
       contadorLocal: 2,
     };
   },
   computed: mapState(["count"]),
-  /*computed: mapState({
+  /!*computed: mapState({
 
     contador(state) {
       return state.count * this.contadorLocal;
       // idade: (state) => state.idade,
       // contador: 'count'
     }
-  }),*/
+  }),*!/
   methods:{
     adicionar(){
       this.$store.commit('increment');
@@ -38,7 +41,15 @@ export default {
     zerar(){
       this.$store.commit('zerar');
     }
-  }
+  }*/
+  computed: {
+    todosDone(){
+      return this.$store.getters.todosDone;
+    },
+    todosDoneCount(){
+      return this.$store.getters.todosDoneCount;
+    }
+  },
 }
 </script>
 
