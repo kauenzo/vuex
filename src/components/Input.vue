@@ -2,13 +2,18 @@
   <div id="input">
     <h1>Input</h1>
 <!--    <p> {{ contador }}</p>-->
-    <p> <strong>ID:</strong> {{ todoId }}
-      <strong>Tarefa:</strong> {{ todoText }}
-      <strong>Status:</strong> {{ todoDone }}</p>
+      <p>
+        <strong>ID:</strong> {{ todoId }}
+        <strong>Tarefa:</strong> {{ todoText }}
+        <strong>Status:</strong> {{ todoDone }}
+      </p>
   </div>
 </template>
 
 <script>
+import {
+  ID_CONTADOR
+} from "../store/const";
 export default {
   name: "Input",
   /*computed: {
@@ -21,13 +26,13 @@ export default {
       return this.$store.getters.todosDone;
     },
     todoId(){
-      return this.$store.getters.todoGetById(2).id;
+      return this.$store.getters.todoGetById(ID_CONTADOR).id;
     },
     todoText(){
-      return this.$store.getters.todoGetById(2).text;
+      return this.$store.getters.todoGetById(ID_CONTADOR).text;
     },
     todoDone(){
-      return this.$store.getters.todoGetById(2).done;
+      return this.$store.getters.todoGetById(ID_CONTADOR).done;
     },
   }
 }

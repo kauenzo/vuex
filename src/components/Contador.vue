@@ -9,11 +9,12 @@
     <h2>Contador</h2>
     <p> {{todosDone}}</p>
     <p> Quantidade: {{ todosDoneCount }}</p>
+    <p> {{ todos }}</p>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: "Contador",
@@ -43,12 +44,15 @@ export default {
     }
   }*/
   computed: {
-    todosDone(){
-      return this.$store.getters.todosDone;
-    },
-    todosDoneCount(){
-      return this.$store.getters.todosDoneCount;
-    }
+    /*...mapState({
+      todos: "todos",
+    }),
+    ...mapGetters({
+      todosDone: "todosDone",
+      todosDoneCount: "todosDoneCount"
+    }),*/
+    ...mapState(["todos"]),
+    ...mapGetters(["todosDone", "todosDoneCount"]),
   },
 }
 </script>

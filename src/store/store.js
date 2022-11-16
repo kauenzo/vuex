@@ -30,6 +30,8 @@ export default createStore({
     todosDone:  (state) => state.todos.filter((todo) => todo.done),
     todosDoneCount: (state, getters) => getters.todosDone.length,
 
+    // todoGetById: state => id => state.todos.find(todo => todo.id === id).
+
     todoGetById(state){
       return function (id){
         return state.todos.find(todo => todo.id === id);
