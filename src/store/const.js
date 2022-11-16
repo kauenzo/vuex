@@ -1,0 +1,1 @@
+export const VALOR_INSERIDO_CONTADOR = 2;

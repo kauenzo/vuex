@@ -11,6 +11,7 @@
 
 <script>
 import { mapState } from 'vuex';
+import { VALOR_INSERIDO_CONTADOR} from "@/store/const";
 
 export default {
   name: "Contador",
@@ -30,10 +31,10 @@ export default {
   }),*/
   methods:{
     adicionar(){
-      this.$store.commit('increment');
+      this.$store.commit('increment', {amount: VALOR_INSERIDO_CONTADOR});
     },
     diminuir(){
-      this.$store.commit('diminuir');
+      this.$store.commit('diminuir', {amount: VALOR_INSERIDO_CONTADOR});
     },
     zerar(){
       this.$store.commit('zerar');
