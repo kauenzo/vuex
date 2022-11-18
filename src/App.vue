@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Contador />
-    <Input />
+<!--    <Contador />-->
+<!--    <Input />-->
   </div>
 
 </template>
